@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Roboto', sans-serif;
-    height: 100vh;
+    height: 100%;
     background: #121212;
 }
 
@@ -238,7 +238,7 @@ body {
 
 .remind_mobile {
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     justify-content: center;
     row-gap: 50px;
