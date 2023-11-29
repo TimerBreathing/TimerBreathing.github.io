@@ -31,6 +31,8 @@ const remindButtonArr = document.querySelectorAll(".reminder_button");
 // let remindWindow = document.querySelector(".reminder");
 let remindWindow;
 
+alert(1);
+
 if (+window.innerWidth <= 800) {
     remindWindow = document.querySelector(".remind_mobile");
 }
