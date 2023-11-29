@@ -1,0 +1,255 @@
+@import url(./reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+.hidden {
+    opacity: 0 !important;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    background: #121212;
+}
+
+.main_button {
+    position: relative;
+    background-color: white;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 3em;
+    letter-spacing: .1em;
+    padding: 10px 30px;
+    border-radius: 1px;
+
+    transition: all .3s linear;
+}
+
+@keyframes main_button_none {
+    to {
+        letter-spacing: 0;
+    }
+}
+
+.main_button:hover {
+    background: rgb(209, 60, 209);
+    letter-spacing: .2em;
+    animation: .3s smoothShadow 1 cubic-bezier(.45, -0.67, .53, 1.63) forwards;
+}
+
+@keyframes smoothShadow {
+    0% {
+        box-shadow: 0 0 0;
+    }
+
+    20% {
+        box-shadow: 0 0 10px rgb(209, 60, 209, .7);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgb(209, 60, 209, .7);
+    }
+
+    100% {
+        box-shadow: 0 0 30px rgb(209, 60, 209, .7);
+    }
+}
+
+.pause, .reset {
+    font-size: 2em;
+    border-radius: 5px;
+}
+
+.timer_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 130px;
+}
+
+
+.timer {
+    display: flex;
+    color: white;
+    font-family: 'Roboto Mono';
+    font-size: 160px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0px;
+}
+
+.dots {
+    font-size: 130px;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@keyframes timer_appear {
+    from {
+        letter-spacing: -1rem;
+    }
+    to {
+        letter-spacing: 0;
+    }
+}
+
+@keyframes gap_anim {
+    from {
+        gap: 10px;
+    }
+    80% {
+        gap: 75px;
+    }
+    to {
+        gap: 60px;
+    }
+}
+
+@keyframes descr_appear {
+    from {
+        letter-spacing: -.30rem;
+    }
+    to {
+        letter-spacing: 0;
+    }
+}
+
+.description {
+    font-size: 30px;
+    color: rgb(209, 60, 209);
+    font-family: 'Overpass';
+    font-weight: 500;
+
+    transition: color 2.5s ease-in, opacity 2.5s ease-in;
+}
+
+.reminder_full_text {
+    font-weight: 500;
+    font-family: 'Rubik';
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.reminder {
+    font-size: 18px;
+    width: 65vw;
+    height: auto;
+    padding: 30px 90px;
+    font-family: 'Rubik';
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 6px 24px rgba(255, 255, 255, .85);
+
+    animation: reminder_appear .3s ease-in 1 forwards;
+}
+
+@keyframes reminder_appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+.reminder span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.reminder_button {
+    position: relative;
+    width: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 15px;
+    background-color: rgb(0, 255, 166);
+    box-shadow: 0 3px 9px rgba(0, 255, 115, 0.9);
+    margin-top: 20px;
+    border-radius: 10px;
+    top: 0;
+
+    transition: box-shadow .3s ease-in, background-color .18s ease-in;
+}
+
+.reminder_button:hover {
+    background-color: rgb(0, 255, 130);
+}
+
+.reminder_button:focus {
+    animation: reminder_button .5s ease-in 1 forwards;
+}
+
+@keyframes reminder_button {
+    50% {
+        top: 1.5px;
+    }
+    to {
+        top: 0
+    }
+}
+
+
+
+
+
+.reminder_mobile_text {
+    color: white;
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 1));
+
+    font-weight: 500;
+    font-family: 'Rubik';
+    text-align: center;
+    font-size: 25px;
+}
+
+.swiper {
+    width: 75vw;
+    height: auto;
+}
+
+.swiper-slide {
+    padding: 30px;
+    font-family: 'Rubik';
+    font-size: 15px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 6px 24px rgba(255, 255, 255, .85);
+}
+
+.swiper-slide span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.remind_mobile {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 50px;
+
+    animation: reminder_appear .3s ease-in 1 forwards;
+}
+
+.none {
+    display: none;
+}
+
+
+
+
