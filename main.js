@@ -9,7 +9,7 @@ const body = document.querySelector("body");
 let circleNumber = 1;
 const lastCircle = 3;
 
-let changeTimer = 3;
+let changeTimer = 180;
 const minutes = document.querySelector(".minutes");
 const secTens = document.querySelector(".sec_tens");
 const sec = document.querySelector(".sec");
@@ -99,6 +99,10 @@ function changeTimerFunc() {
                 changeStartTime(changeTimer);
                 mainCircleFunc();
                 break;
+
+            case 10:
+                window.location.href = './index.html';
+                break;
         }
     }
 }
@@ -162,6 +166,13 @@ function mainCircleFunc() {
         this.classList.toggle('resume');
     }
 }
+
+
+function end() {
+    changeTimer = 0;
+    
+}
+
 
 // reset.onclick = function() {
 

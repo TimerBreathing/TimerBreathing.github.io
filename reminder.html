@@ -59,14 +59,11 @@
         });
 
         const remindButtonArr = document.querySelectorAll(".reminder_button");
-        // let remindWindow = document.querySelector(".reminder");
         const remindWindow = document.querySelector(".remind_mobile");
         const remindWindowHuge = document.querySelector(".reminder");
 
-
         remindButtonArr.forEach(item => {
         item.onclick = () => {
-            // remindWindow.classList.add('none');
                 window.location.href = './timer.html';
             };
         })
