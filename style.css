@@ -34,6 +34,7 @@ body, html {
     letter-spacing: .1em;
     padding: 10px 30px;
     border-radius: 1px;
+    z-index: 2;
 
     transition: all .3s linear;
 }
@@ -152,6 +153,8 @@ body, html {
 }
 
 .reminder {
+    display: none;
+
     font-size: 18px;
     width: 65vw;
     height: auto;
@@ -255,9 +258,18 @@ body, html {
 }
 
 .none {
-    display: none;
+    display: none !important;
 }
 
+/* @media (max-width: 800px) {
+    .reminder {
+        display: none;
+    }
+
+    .remind_mobile {
+        display: flex;
+    }
+} */
 
 
 

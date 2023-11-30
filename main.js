@@ -15,10 +15,7 @@
 //     },
 // });
 
-var swiper = new Swiper(".mySwiper", {
-    effect: "cards",
-    grabCursor: true,
-});
+
 
 const mainButton = document.querySelector(".main_button");
 const timerWrapper = document.querySelector(".timer_wrapper");
@@ -27,16 +24,7 @@ const timer = document.querySelector(".timer");
 const pause = document.querySelector(".pause");
 const reset = document.querySelector(".reset");
 const description = document.querySelector(".description");
-const remindButtonArr = document.querySelectorAll(".reminder_button");
-// let remindWindow = document.querySelector(".reminder");
-let remindWindow;
 
-if (+window.innerWidth <= 800) {
-    remindWindow = document.querySelector(".remind_mobile");
-}
-else {
-    remindWindow = document.querySelector(".reminder");
-}
 
 
 const body = document.querySelector("body");
@@ -65,21 +53,27 @@ let descriptionInterval;
 
 mainButton.onclick = function() {
     this.style.animation = '.2s main_button_none 1 forwards';
+    // window.location.href = './reminder.html';
+
+    remindButtonArr.forEach(item => {
+        item.onclick = () => {
+            // remindWindow.classList.add('none');
+            window.location.href = './index.html';
+
+            timerWrapper.classList.toggle('none');
+            buttons.style.animation = '.5s gap_anim cubic-bezier(.45, -0.67, .53, 1.63) 1 forwards';
+            timer.style.animation = '.5s timer_appear cubic-bezier(.45, -0.67, .53, 1.63) 1 forwards';
+            description.style.animation = '.5s descr_appear cubic-bezier(.45, -0.67, .53, 1.63) 1 forwards';
+            mainCircleFunc();
+        };
+    })
 
     setTimeout(() => {
         this.classList.toggle('none');
-        remindWindow.classList.remove('none');
-        remindButtonArr.forEach(item => {
-            item.onclick = () => {
-                remindWindow.classList.add('none');
-    
-                timerWrapper.classList.toggle('none');
-                buttons.style.animation = '.5s gap_anim cubic-bezier(.45, -0.67, .53, 1.63) 1 forwards';
-                timer.style.animation = '.5s timer_appear cubic-bezier(.45, -0.67, .53, 1.63) 1 forwards';
-                description.style.animation = '.5s descr_appear cubic-bezier(.45, -0.67, .53, 1.63) 1 forwards';
-                mainCircleFunc();
-            };
-        })
+        // +window.innerWidth <= 800 ? remindWindow.style.display = 'flex' : remindWindow.style.display = 'block';
+        
+            
+
     }, 170);
 };
 
