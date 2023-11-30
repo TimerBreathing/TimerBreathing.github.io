@@ -19,6 +19,11 @@ body {
     background: #121212;
 }
 
+body, html {
+    height: -webkit-fill-available; /* Для Safari */
+    height: fill-available; /* Для большинства современных браузеров */
+  }
+
 .main_button {
     position: relative;
     background-color: white;
