@@ -12,7 +12,7 @@ const body = document.querySelector("body");
 let circleNumber = 1;
 const lastCircle = 3;
 
-let changeTimer = 1;
+let changeTimer = 120;
 const minutes = document.querySelector(".minutes");
 const secTens = document.querySelector(".sec_tens");
 const sec = document.querySelector(".sec");
@@ -55,57 +55,56 @@ function changeTimerFunc() {
     else {
         ++circleNumber;
         switch (circleNumber) {
-            case 2: // задержка дыхание на 30
-                end();
-                // changeTimer = 30;
-                // changeStartTime(changeTimer);
-                // mainCircleFunc();
-                // break;
+            case 2: // задержка дыхания на 30
+                changeTimer = 30;
+                changeStartTime(changeTimer);
+                mainCircleFunc();
+                break;
 
-            case 3: // задержка дыхание на 15
+            case 3: // задержка дыхания на 15
                 changeTimer = 15;
                 changeStartTime(changeTimer);
                 mainCircleFunc();
                 break;
             
             case 4: // 30 вдох-выдохов
-                changeTimer = 1;
+                changeTimer = 120;
                 changeStartTime(changeTimer);
                 mainCircleFunc();
                 break;
 
-            case 5: // задержка дыхание на 60
+            case 5: // задержка дыхания на 60
                 changeTimer = 60;
                 changeStartTime(changeTimer);
                 mainCircleFunc();
                 break;
             
-            case 6: // задержка дыхание на 15
+            case 6: // задержка дыхания на 15
                 changeTimer = 15;
                 changeStartTime(changeTimer);
                 mainCircleFunc();
                 break;
 
             case 7: // 30 вдох-выдохов
-                changeTimer = 1;
+                changeTimer = 120;
                 changeStartTime(changeTimer);
                 mainCircleFunc();
                 break;
 
-            case 8: // задержка дыхание на 90
+            case 8: // задержка дыхания на 90
                 changeTimer = 90;
                 changeStartTime(changeTimer);
                 mainCircleFunc();
                 break;
             
-            case 9: // задержка дыхание на 15
+            case 9: // задержка дыхания на 15
                 changeTimer = 15;
                 changeStartTime(changeTimer);
                 mainCircleFunc();
                 break;
 
             case 10:
-                window.location.href = './index.html';
+                end();
                 break;
         }
     }

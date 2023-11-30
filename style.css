@@ -279,6 +279,12 @@ body, html {
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, .75));
 }
 
+.play_list {
+    color: rgb(93, 0, 255);
+    /* border-bottom: 1.5px rgb(93, 0, 255); */
+    /* border-bottom-style: dashed; */
+}
+
 .end_wrapper {
     opacity: 0;
     width: 65vw;
