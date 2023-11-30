@@ -5,11 +5,14 @@ const pause = document.querySelector(".pause");
 const reset = document.querySelector(".reset");
 const description = document.querySelector(".description");
 
+const endWrapper = document.querySelector(".end_wrapper");
+const buttonEnd = document.querySelector(".reminder_button");
+
 const body = document.querySelector("body");
 let circleNumber = 1;
 const lastCircle = 3;
 
-let changeTimer = 180;
+let changeTimer = 1;
 const minutes = document.querySelector(".minutes");
 const secTens = document.querySelector(".sec_tens");
 const sec = document.querySelector(".sec");
@@ -53,10 +56,11 @@ function changeTimerFunc() {
         ++circleNumber;
         switch (circleNumber) {
             case 2: // задержка дыхание на 30
-                changeTimer = 30;
-                changeStartTime(changeTimer);
-                mainCircleFunc();
-                break;
+                end();
+                // changeTimer = 30;
+                // changeStartTime(changeTimer);
+                // mainCircleFunc();
+                // break;
 
             case 3: // задержка дыхание на 15
                 changeTimer = 15;
@@ -169,8 +173,26 @@ function mainCircleFunc() {
 
 
 function end() {
-    changeTimer = 0;
-    
+    timerWrapper.style.opacity = '0';
+    setTimeout(() => {
+        timerWrapper.classList.add('none');
+        endWrapper.classList.remove('none');
+        endWrapper.style.opacity = '100%';
+        buttonEnd.onclick = () => {
+            endWrapper.style.opacity = '0';
+            setTimeout(() => {
+                location.href = './index.html';
+            }, 400);
+        };
+    }, 400);
+
+    setTimeout(() => {
+        endWrapper.style.opacity = '0';
+    }, 9500);
+
+    setTimeout(() => {
+        window.location.href = 'index.html';
+    }, 10000);
 }
 
 

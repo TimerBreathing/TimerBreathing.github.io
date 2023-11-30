@@ -80,6 +80,8 @@ body, html {
     justify-content: center;
     align-items: center;
     gap: 130px;
+
+    transition: opacity .4s ease-in;
 }
 
 
@@ -215,9 +217,6 @@ body, html {
 }
 
 
-
-
-
 .reminder_mobile_text {
     color: white;
     filter: drop-shadow(0 0 18px rgba(255, 255, 255, 1));
@@ -261,15 +260,7 @@ body, html {
     display: none !important;
 }
 
-@media (max-width: 800px) {
-    .reminder {
-        display: none;
-    }
 
-    .remind_mobile {
-        display: flex;
-    }
-}
 
 
 .swiper-pagination-bullet {
@@ -285,18 +276,22 @@ body, html {
 
 .white {
     color: #fff;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, .75));
 }
 
 .end_wrapper {
+    opacity: 0;
     width: 65vw;
     height: auto;
     font-family: 'Rubik';
-    font-weight: 500;
-    font-size: 15px;
+    font-weight: 300;
+    font-size: 20px;
 
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    transition: opacity .4s ease-in;
 }
 
 .end_wrapper_inner {
@@ -309,4 +304,51 @@ body, html {
     border-radius: 10px;
 }
 
+.blue {
+    background-color: rgb(93, 0, 255);
+    box-shadow: 0 0 8px rgba(93, 4, 255, .75);
+    color: #fff;
+}
+
+.blue:hover {
+    background-color: rgb(234, 0, 255);
+}
+
+@media (max-width: 880px) {
+    .reminder_full_text {
+        font-size: 25px;
+    }
+
+    .end_wrapper {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 800px) {
+    .reminder {
+        display: none;
+    }
+
+    .remind_mobile {
+        display: flex;
+    }
+
+    .end_wrapper_inner {
+        padding: 30px 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .reminder_full_text {
+        font-size: 21px;
+    }
+
+    .end_wrapper_inner {
+        padding: 30px;
+    }
+
+    .end_wrapper { 
+        width: 85vw;
+    }
+}
 
