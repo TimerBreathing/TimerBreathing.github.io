@@ -12,10 +12,10 @@
     <script>
 
         const mainButton = document.querySelector(".main_button");
-        const body = document.querySelector("body");
         
         mainButton.onclick = function() {
             this.style.animation = '.2s main_button_none 1 forwards';
+            this.style.opacity = '0';
             setTimeout(() => {
                 window.location.href = './reminder.html';
             }, 210);
