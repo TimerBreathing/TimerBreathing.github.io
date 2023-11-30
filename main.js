@@ -48,8 +48,8 @@ const minutes = document.querySelector(".minutes");
 const secTens = document.querySelector(".sec_tens");
 const sec = document.querySelector(".sec");
 
-const timerAudio = new Audio('./audio/timer_audio.mp3');
-const timerAudioEnd = new Audio('./audio/timer_end.mp3');
+// const timerAudio = new Audio('./audio/timer_audio.mp3');
+// const timerAudioEnd = new Audio('./audio/timer_end.mp3');
 
 changeStartTime(changeTimer);
 
@@ -89,8 +89,8 @@ function changeTimerFunc() {
         
         if (secTens.innerHTML == '0' && minutes.innerHTML == '0') {
             if (+sec.innerHTML <= 5) {
-                if (+sec.innerHTML === 0) timerAudioEnd.play()
-                else timerAudio.play()
+                if (+sec.innerHTML === 0) new Audio('./audio/timer_end.mp3').play()
+                else new Audio('./audio/timer_audio.mp3').play()
             }
         }
     }
