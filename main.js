@@ -1,31 +1,9 @@
-// const swiper = new Swiper('.swiper', {
-//     // Optional parameters
-//     loop: true,
-  
-//     // If we need pagination
-//     pagination: {
-//       el: '.swiper-pagination',
-      
-//     },
-  
-//     // Navigation arrows
-//     navigation: {
-//       nextEl: '.swiper-button-next',
-//       prevEl: '.swiper-button-prev',
-//     },
-// });
-
-
-
-const mainButton = document.querySelector(".main_button");
 const timerWrapper = document.querySelector(".timer_wrapper");
 const buttons = document.querySelector(".buttons");
 const timer = document.querySelector(".timer");
 const pause = document.querySelector(".pause");
 const reset = document.querySelector(".reset");
 const description = document.querySelector(".description");
-
-
 
 const body = document.querySelector("body");
 let circleNumber = 1;
@@ -35,9 +13,6 @@ let changeTimer = 3;
 const minutes = document.querySelector(".minutes");
 const secTens = document.querySelector(".sec_tens");
 const sec = document.querySelector(".sec");
-
-// const timerAudio = new Audio('./audio/timer_audio.mp3');
-// const timerAudioEnd = new Audio('./audio/timer_end.mp3');
 
 changeStartTime(changeTimer);
 
@@ -51,42 +26,15 @@ let interval;
 let firstDescrInterval;
 let descriptionInterval;
 
-mainButton.onclick = function() {
-    this.style.animation = '.2s main_button_none 1 forwards';
-    // window.location.href = './reminder.html';
-
-    remindButtonArr.forEach(item => {
-        item.onclick = () => {
-            // remindWindow.classList.add('none');
-            window.location.href = './index.html';
-
-            timerWrapper.classList.toggle('none');
-            buttons.style.animation = '.5s gap_anim cubic-bezier(.45, -0.67, .53, 1.63) 1 forwards';
-            timer.style.animation = '.5s timer_appear cubic-bezier(.45, -0.67, .53, 1.63) 1 forwards';
-            description.style.animation = '.5s descr_appear cubic-bezier(.45, -0.67, .53, 1.63) 1 forwards';
-            mainCircleFunc();
-        };
-    })
-
-    setTimeout(() => {
-        this.classList.toggle('none');
-        // +window.innerWidth <= 800 ? remindWindow.style.display = 'flex' : remindWindow.style.display = 'block';
-        
-            
-
-    }, 170);
-};
+timerWrapper.classList.toggle('none');
+buttons.style.animation = '.5s gap_anim cubic-bezier(.45, -0.67, .53, 1.63) 1 forwards';
+timer.style.animation = '.5s timer_appear cubic-bezier(.45, -0.67, .53, 1.63) 1 forwards';
+description.style.animation = '.5s descr_appear cubic-bezier(.45, -0.67, .53, 1.63) 1 forwards';
+mainCircleFunc();
 
 function changeTimerFunc() {
     if (+sec.innerHTML) {
         sec.innerHTML--;
-        
-        if (secTens.innerHTML == '0' && minutes.innerHTML == '0') {
-            if (+sec.innerHTML <= 5) {
-                if (+sec.innerHTML === 0) new Audio('./audio/timer_end.mp3').play()
-                else new Audio('./audio/timer_audio.mp3').play()
-            }
-        }
     }
 
     else if (+secTens.innerHTML) {
@@ -215,26 +163,26 @@ function mainCircleFunc() {
     }
 }
 
-reset.onclick = function() {
+// reset.onclick = function() {
 
-    location.reload();
+    
 
-    // clearInterval(interval);
-    // clearTimeout(firstDescrInterval);
-    // clearInterval(descriptionInterval);
+//     // clearInterval(interval);
+//     // clearTimeout(firstDescrInterval);
+//     // clearInterval(descriptionInterval);
 
-    // circleNumber = 1;
-    // minutes.innerHTML = startValues.minutes;
-    // secTens.innerHTML = startValues.secTens;
-    // sec.innerHTML = startValues.sec;
+//     // circleNumber = 1;
+//     // minutes.innerHTML = startValues.minutes;
+//     // secTens.innerHTML = startValues.secTens;
+//     // sec.innerHTML = startValues.sec;
         
-    // if (!pause.classList.contains('resume')) {
-    //     pause.innerHTML = 'начать';
-    //     pause.classList.toggle('resume');
-    //     description.classList.toggle('hidden');
-    // }
+//     // if (!pause.classList.contains('resume')) {
+//     //     pause.innerHTML = 'начать';
+//     //     pause.classList.toggle('resume');
+//     //     description.classList.toggle('hidden');
+//     // }
 
-}
+// }
 
 
 
