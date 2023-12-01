@@ -240,7 +240,7 @@ body, html {
     border-radius: 20px;
     box-shadow: 0 6px 24px rgba(255, 255, 255, .85);
 
-    height: 415px !important;
+    /* height: 415px !important; */
 }
 
 .swiper-slide span {
