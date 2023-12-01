@@ -241,9 +241,6 @@ body, html {
     box-shadow: 0 6px 24px rgba(255, 255, 255, .85);
 
     height: 415px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
 }
 
 .swiper-slide span {
