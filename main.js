@@ -4,6 +4,7 @@ const timer = document.querySelector(".timer");
 const pause = document.querySelector(".pause");
 const reset = document.querySelector(".reset");
 const description = document.querySelector(".description");
+const notification = document.querySelector(".notification");
 
 const endWrapper = document.querySelector(".end_wrapper");
 const buttonEnd = document.querySelector(".reminder_button");
@@ -18,6 +19,13 @@ const minutes = document.querySelector(".minutes");
 const secTens = document.querySelector(".sec_tens");
 const sec = document.querySelector(".sec");
 
+const complicateEl = document.createElement("div");
+complicateEl.className = "notification";
+complicateEl.innerHTML = "Добавлено <span>2</span> доп раунда";
+const simplifyEl = document.createElement("div");
+simplifyEl.className = "notification";
+simplifyEl.innerHTML = "Доп раунды <span>удалены</span>";
+
 changeStartTime(changeTimer);
 let complicateFlag = false;
 
@@ -27,13 +35,25 @@ complicateButton.addEventListener('click', function() {
         this.classList.remove('complicate');
         this.classList.add('simplify');
         complicateFlag = true;
+
+        timerWrapper.appendChild(complicateEl);
+        setTimeout(() => {
+            complicateEl.remove();
+        }, 1500);
     }
     else {
         this.innerHTML = 'усложнить';
         this.classList.remove('simplify');
         this.classList.add('complicate');
         complicateFlag = false;
+
+        timerWrapper.appendChild(simplifyEl);
+        setTimeout(() => {
+            simplifyEl.remove();
+        }, 1500);
     }
+
+    console.log(timerWrapper.children);
 });
 
 const startValues = {
