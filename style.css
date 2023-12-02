@@ -393,23 +393,23 @@ body, html {
 
 @keyframes notification_appear {
     from {
-        top: 40px;
+        top: 20px;
         opacity: 0;
     }
     30% {
         opacity: 100%;
-        top: 60px;
+        top: 40px;
     }
     70% {
         opacity: 100%;
-        top: 60px;
+        top: 40px;
     }
     80% {
         opacity: 100%;
-        top: 60px;
+        top: 40px;
     }
     to {
-        top: 40px;
+        top: 20px;
         opacity: 0;
     }
 }
