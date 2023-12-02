@@ -7,6 +7,7 @@ const description = document.querySelector(".description");
 
 const endWrapper = document.querySelector(".end_wrapper");
 const buttonEnd = document.querySelector(".reminder_button");
+const complicateButton = document.querySelector(".complicate");
 
 const body = document.querySelector("body");
 let circleNumber = 1;
@@ -18,6 +19,22 @@ const secTens = document.querySelector(".sec_tens");
 const sec = document.querySelector(".sec");
 
 changeStartTime(changeTimer);
+let complicateFlag = false;
+
+complicateButton.addEventListener('click', function() {
+    if (this.innerHTML == 'усложнить') {
+        this.innerHTML = 'облегчить';
+        this.classList.remove('complicate');
+        this.classList.add('simplify');
+        complicateFlag = true;
+    }
+    else {
+        this.innerHTML = 'усложнить';
+        this.classList.remove('simplify');
+        this.classList.add('complicate');
+        complicateFlag = false;
+    }
+});
 
 const startValues = {
     minutes: minutes.innerHTML,
@@ -54,6 +71,7 @@ function changeTimerFunc() {
 
     else {
         ++circleNumber;
+        alert(circleNumber);
         switch (circleNumber) {
             case 2: // задержка дыхания на 30
                 changeTimer = 30;
@@ -104,7 +122,15 @@ function changeTimerFunc() {
                 break;
 
             case 10:
-                end();
+                if (complicateFlag) {
+                    circleNumber = 3;
+                    complicateFlag = false;
+                    complicateButton.remove();
+                    changeTimerFunc();
+                }
+                else {
+                    end();
+                }
                 break;
         }
     }

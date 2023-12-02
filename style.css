@@ -69,9 +69,19 @@ body, html {
     }
 }
 
-.pause, .reset {
+.pause, .reset, .complicate, .simplify {
     font-size: 2em;
     border-radius: 5px;
+}
+
+.complicate:hover {
+    background: rgb(247, 0, 78);
+    box-shadow: 0 0 22px rgba(247, 0, 78, .8) !important
+}
+
+.simplify:hover {
+    background: rgb(0, 255, 166);
+    box-shadow: 0 0 22px rgba(0, 255, 166, .8) !important;
 }
 
 .timer_wrapper {
@@ -103,6 +113,7 @@ body, html {
 .buttons {
     display: flex;
     justify-content: center;
+    max-width: 700px;
     row-gap: 20px;
     flex-wrap: wrap;
 }
