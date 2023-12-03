@@ -91,7 +91,6 @@ function changeTimerFunc() {
 
     else {
         ++circleNumber;
-        alert(circleNumber);
         switch (circleNumber) {
             case 2: // задержка дыхания на 30
                 changeTimer = 30;
